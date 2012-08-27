@@ -34,15 +34,21 @@ public class ChooserActivity extends Activity
         /* The following are each of the ActionBar.TabListener callbacks */
 
         public void onTabSelected(Tab tab, FragmentTransaction ft) {
+            Fragment preInitializedFragment = (Fragment) mActivity.getFragmentManager().findFragmentByTag(mTag);
+
             // Check if the fragment is already initialized
-            if (mFragment == null) {
+            if (mFragment == null && preInitializedFragment == null) {
                 // If not, instantiate and add it to the activity
                 mFragment = Fragment.instantiate(mActivity, mClass.getName());
                 ft.add(android.R.id.content, mFragment, mTag);
-            } else {
+            } else if (mFragment != null) {
                 // If it exists, simply attach it in order to show it
                 ft.attach(mFragment);
-            }
+                } else if(preInitializedFragment != null) {
+                ft.attach(preInitializedFragment);
+                mFragment = preInitializedFragment;
+                }
+
         }
 
         public void onTabUnselected(Tab tab, FragmentTransaction ft) {
