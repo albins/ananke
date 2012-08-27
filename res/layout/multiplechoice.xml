@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
+    android:layout_height="fill_parent"
+    >
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:id="@+id/multiplechoice">
+    <LinearLayout
+        android:id="@+id/button_list"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center">
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/multiple_choice_add_button"
+          android:text="@string/button_add_field"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="left"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/multiple_choice_button"
+            android:text="@string/button_decide"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="right"/>
+    </LinearLayout>
   <!-- <EditText android:id="@+id/edit_message" -->
   <!--           android:layout_width="0dp" -->
   <!--           android:layout_height="wrap_content" -->
@@ -13,5 +48,20 @@
   <!--       android:layout_width="wrap_content" -->
   <!--       android:layout_height="wrap_content" -->
   <!--       android:text="@string/button_send" /> -->
+  <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choice1"
+        android:hint="@string/alternative_text" />
+  <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choice2"
+        android:hint="@string/alternative_text" />
+ <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choice3"
+        android:hint="@string/alternative_text" />
 </LinearLayout>
-
+</ScrollView>

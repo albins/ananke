@@ -3,4 +3,6 @@
     <string name="app_name">Ananke</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_decide">Decide</string>
+    <string name="button_add_field">Add alternative</string>
+    <string name="alternative_text">Enter alternative</string>
 </resources>
