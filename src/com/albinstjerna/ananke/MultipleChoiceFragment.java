@@ -40,7 +40,11 @@ public class MultipleChoiceFragment extends Fragment {
         }
 
         Random randgen = new Random();
-        return strings.get(randgen.nextInt(strings.size()));
+        if(strings.size() == 0) {
+            return "No choices entered";
+        } else {
+            return strings.get(randgen.nextInt(strings.size()));
+        }
 
     }
 
