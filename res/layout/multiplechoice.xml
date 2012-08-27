@@ -5,8 +5,7 @@
     >
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_alignParentTop="true"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -16,27 +15,18 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:layout_gravity="center">
       <Button
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:id="@+id/multiple_choice_add_button"
           android:text="@string/button_add_field"
-          android:layout_centerVertical="true"
-          android:layout_centerHorizontal="true"
           android:layout_gravity="left"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/multiple_choice_button"
             android:text="@string/button_decide"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="right"/>
     </LinearLayout>
   <!-- <EditText android:id="@+id/edit_message" -->
