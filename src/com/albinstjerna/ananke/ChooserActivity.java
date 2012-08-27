@@ -12,7 +12,8 @@ import android.app.ActionBar.Tab;
 
 public class ChooserActivity extends Activity
     implements BinaryChoiceFragment.RecieveDecisionData, MultipleChoiceFragment.RecieveDecisionData {
-
+    
+    private ActionBar actionBar;
     public static class TabListener<T extends Fragment> implements ActionBar.TabListener {
         private Fragment mFragment;
         private final Activity mActivity;
@@ -70,24 +71,40 @@ public class ChooserActivity extends Activity
         //setContentView(R.layout.chooser);
 
         // Setup action bar for tab navigation.
-        ActionBar actionBar = getActionBar();
+        actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
 
         // Add tabs:
-        Tab binary_choice_tab = actionBar.newTab()
+        Tab tab = actionBar.newTab()
             .setText("Binary Choice")
-            .setTabListener(new TabListener<BinaryChoiceFragment> (
-                                this, "binary choice", BinaryChoiceFragment.class));
-        actionBar.addTab(binary_choice_tab);
+            .setTabListener(new TabListener<BinaryChoiceFragment> (this, 
+                                                                   "binary choice", 
+                                                                   BinaryChoiceFragment.class));
+        actionBar.addTab(tab);
 
-        Tab multiple_choice_tab = actionBar.newTab()
+        tab = actionBar.newTab()
             .setText("Multiple Choice")
             .setTabListener(new TabListener<MultipleChoiceFragment> (
-                                this, "multiple choice", MultipleChoiceFragment.class));
+                                                                     this, "multiple choice", MultipleChoiceFragment.class));
 
-        actionBar.addTab(multiple_choice_tab);
+        actionBar.addTab(tab);
 
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        
+        actionBar.setSelectedNavigationItem(savedInstanceState.getInt("TABPOS"));
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putInt("TABPOS", actionBar.getSelectedNavigationIndex());
     }
 
     /** Send the decision to the displayer view. */
