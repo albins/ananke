@@ -61,9 +61,6 @@ public class ChooserActivity extends Activity
     }
 
     
-    // This message is either the string "0" or the string "1".
-    // Also the fact that I'm typing this manually SUCKS.
-    //    public final static String BOOLEAN_MESSAGE = "com.albinstjerna.ananke.BOOLEAN_MESSAGE";
     public final static String STRING_MESSAGE = "com.albinstjerna.ananke.STRING_MESSAGE";
 
     //    BinaryChoiceFragment binaryFragment;
@@ -98,15 +95,6 @@ public class ChooserActivity extends Activity
     }
 
     /** Send the decision to the displayer view. */
-    
-    // public void sendStringMessage(View view) {
-    //     Intent intent = new Intent(this, DisplayerActivity.class);
-  
-    //     intent.putExtra(STRING_MESSAGE, "This is a test");
-    //     startActivity(intent);
-        
-    // }
-
     public void handleDecision(String decision) {
         Intent intent = new Intent(this, DisplayerActivity.class);
         intent.putExtra(STRING_MESSAGE, decision);
