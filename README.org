@@ -1,0 +1,14 @@
+* What is it?
+Ananke is a decision-making app for Android 4.x and up. It's mostly a toy, really, and that was exactly the purpose. This is my first app ever. Despite its almost silly simplicity, there's a lot of code, wich should say more about the Android framework and about Java in general.
+
+I am really, /really/ not pleased with my experience developing this. The Android framework is an odd mix of code that helps you way too much, and code that is amazingly unhelpful (see commit 957209d5691f52aaa0d50bbfb1e7c051ca4daf04).
+* Why Ananke?
+Quoting [[http://en.wikipedia.org/wiki/Ananke_(mythology)][Wikipedia]]: »In Greek mythology, Ananke, also spelled Anangke, Anance, or Anagke (Ancient Greek: Ἀνάγκη, from the common noun ἀνάγκη, "force, constraint, necessity"), was a primordial ancient Greek goddess of inevitability, the personification of destiny, necessity and fate«. This seemed a very fitting name for a decision-making program.
+* Why API level 13!?
+Because I wanted to use ActionBar, and because I friggin' hate stupid vendors that don't update their phones to the latest versions. It's inexcusable to still sell phones that aren't even on 4.x. Are you selling computers with Windows 98 as well!?
+
+With that said, I may tweak it to use ActionBarSherlock at some point in the future, if it won't look worse on my phone and if it's not too hard (read: if documentation is available and the API isn't too far off from the normal ActionBar).
+* Usage
+Build with =ant debug= or =ant release=.
+
+The App has two tabs, representing two kinds of decisions: binary choice (yes/no) and multiple choice. The usage should be mostly self-explanatory, and there are no knobs to fiddle with (yet).
